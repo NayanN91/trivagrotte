@@ -23,7 +23,14 @@ function App() {
   return (
     <div className="App">
       {grottezer.map((card) => (
-        <Card key={card.id} id={card.id} name={card.name} img={card.img} />
+        <Card
+          key={card.id}
+          id={card.id}
+          name={card.name}
+          img={card.img}
+          region={card.region}
+          price={card.price}
+        />
       ))}
     </div>
   );
