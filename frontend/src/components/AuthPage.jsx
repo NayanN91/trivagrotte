@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import "./AuthPage.css";
+import "./Navbar.css";
 // import { Link } from "react-router-dom";
 
 const AuthPage = () => {
@@ -65,8 +65,7 @@ const AuthPage = () => {
         </div>
       </form>
       {isLoggedIn && (
-        <div className="navigation">
-          {/* Contenu à afficher dans la barre de navigation */}
+        <div className="isloggedin">
           <span>Connecté</span>
           <div className="statusDot"></div>
         </div>

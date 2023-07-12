@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Card from "./components/card";
 import axios from "axios";
-import "./app.css";
 import AuthPage from "./components/AuthPage";
+import Navbar from "./components/Navbar";
+import "./app.css";
 import "./App.css";
+import "./components/Navbar.css";
 
 function App() {
   const [grottezer, setGrottezer] = useState([]);
@@ -24,6 +26,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
+      <AuthPage />
       {grottezer.map((card) => (
         <Card
           key={card.id}
@@ -35,10 +39,6 @@ function App() {
         />
       ))}
     </div>
-  );
-    <>
-      <AuthPage />
-    </>
   );
 }
 
