@@ -1,9 +1,9 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 import "./AuthPage.css";
 // import { Link } from "react-router-dom";
 
-const AuthPage = ({}) => {
+const AuthPage = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
