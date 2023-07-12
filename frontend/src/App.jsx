@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Card from "./components/card";
 import axios from "axios";
 import "./app.css";
+import ContextHome from "./components/ContextHome";
 
 function App() {
   const [grottezer, setGrottezer] = useState([]);
@@ -21,18 +22,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {grottezer.map((card) => (
-        <Card
-          key={card.id}
-          id={card.id}
-          name={card.name}
-          img={card.img}
-          region={card.region}
-          price={card.price}
-        />
-      ))}
-    </div>
+    <><div className="ContextHomeContainer">
+      <ContextHome />
+    </div><div className="App">
+        {grottezer.map((card) => (
+          <Card
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            img={card.img}
+            region={card.region}
+            price={card.price} />
+        ))}
+      </div></>
   );
 }
 
