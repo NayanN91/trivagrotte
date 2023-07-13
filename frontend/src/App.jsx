@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import Card from "./components/card";
 import axios from "axios";
 import "./app.css";
-import { Carousel } from "./components/Carousel";
-import { slides } from "./data/carouselData.json";
 import Filters from "./components/filter";
 import Navbar from "./components/Navbar";
+import StarRating from "./components/StarRating";
+
 function App() {
   const [grottezer, setGrottezer] = useState([]);
   const [filteredGrottezer, setFilteredGrottezer] = useState([]);
@@ -74,7 +74,7 @@ function App() {
           capacity={card.max_capacity}
         />
       ))}
-      <Carousel data={slides} />
+      <StarRating />
     </div>
   );
 }
