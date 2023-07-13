@@ -1,16 +1,14 @@
+import React, { useState, useEffect } from "react";
 import { AuthProvider } from "./components/AuthContext";
-import { useState, useEffect } from "react";
-import axios from "axios";
 import Card from "./components/card";
-import ContextHome from "./components/ContextHome";
-import Filters from "./components/filter";
-import Footer from "./components/Footer";
+import axios from "axios";
+
 import Navbar from "./components/Navbar";
 import "./app.css";
+import "./App.css";
 import "./components/Navbar.css";
-
-
-
+import Filters from "./components/filter";
+import Footer from "./components/Footer";
 
 function App() {
   const [grottezer, setGrottezer] = useState([]);
@@ -60,52 +58,37 @@ function App() {
   };
 
   return (
-    <>
+    <><AuthProvider>
       <div className="App">
-        <AuthProvider />
         <Navbar />
-        <div>
-          <img
-            className="grotteprincipal"
-            src="src\assets\image grotte principal.png"
-            alt="image grotte"
-          ></img>
-          <Filters
-            onFilterChange={handleFilterChange}
-            numberRes={filteredGrottezer.length}
-          />
-          <div className="ContextHomeContainer">
-            <ContextHome />
-          </div>
+        <div className="firstImgContainer">
+          <img className="firstImg"
+            src="src\assets\image grotte principal.png" alt="image grotte 1"></img>
         </div>
-        <div className="App">
-          <Navbar />
-          <Filters
-            onFilterChange={handleFilterChange}
-            numberRes={filteredGrottezer.length}
-          />
-          {filteredGrottezer.map((card) => (
-            <Card
-              key={card.id}
-              id={card.id}
-              name={card.name}
-              img={card.img}
-              region={card.region}
-              price={card.price}
-              feu={card.feu}
-              piscine={card.piscine}
-              capacity={card.max_capacity}
-            />
-          ))}
-        </div>
-        <img
-          className="grottesecondaire"
-          src="\src\assets\image grotte secondaire.png"
-          alt="image grotte secondaire"
-        ></img>
-        <Footer />
+        <Filters
+          onFilterChange={handleFilterChange}
+          numberRes={filteredGrottezer.length} />
+
+        {filteredGrottezer.map((card) => (
+          <Card
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            img={card.img}
+            region={card.region}
+            price={card.price}
+            feu={card.feu}
+            piscine={card.piscine}
+            capacity={card.max_capacity} />
+        ))}
       </div>
+      <div className="secondImgContainer">
+        <img className="secondImg"
+          src="src\assets\image grotte secondaire +footer.png" alt="image grotte 2"></img>
+      </div>
+    </AuthProvider>
     </>
   );
 }
+
 export default App;
