@@ -1,7 +1,7 @@
 .cardGlobal {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
   list-style: none;
   object-fit: cover;

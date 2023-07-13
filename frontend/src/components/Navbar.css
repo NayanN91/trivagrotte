@@ -1,9 +1,11 @@
 .Nav-All {
+  width: 1500px;
   font-family: "Maven Pro", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0rem 2rem;
+  background-color: #080502;
 }
 
 .Nav-Logo {
