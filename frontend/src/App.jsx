@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
-import Card from "./components/card";
 import axios from "axios";
-import "./app.css";
+import Card from "./components/card";
 import ContextHome from "./components/ContextHome";
 import Filters from "./components/filter";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import "./app.css";
+
 
 function App() {
   const [grottezer, setGrottezer] = useState([]);
@@ -54,13 +57,17 @@ function App() {
 
   return (
     
-    <><div className="ContextHomeContainer">
-      <ContextHome />
-    </div><div className="App">
-        <Filters
+    <><div>
+      <Navbar />
+    </div>
+    <img className="grotteprincipal"
+    src="src\assets\image grotte principal.png" alt="image grotte"></img>
+      <Filters
           onFilterChange={handleFilterChange}
           numberRes={filteredGrottezer.length} />
-
+    <div className="ContextHomeContainer">
+      <ContextHome />
+    </div><div className="App">
         {filteredGrottezer.map((card) => (
           <Card
             key={card.id}
@@ -83,7 +90,11 @@ function App() {
             region={card.region}
             price={card.price} />
         ))}
-      </div></>
+      </div>
+      <img className="grottesecondaire"
+      src="\src\assets\image grotte secondaire.png" alt="image grotte secondaire" ></img>
+      <Footer />
+      </>
       
   );
 }
