@@ -12,7 +12,7 @@ const Card = (props) => {
             <ul>
               <li>{name}</li>
               <li>{region}</li>
-              <li>{price}$</li>
+              <li>{price} mootmoot/night</li>
             </ul>
           </div>
         </div>
