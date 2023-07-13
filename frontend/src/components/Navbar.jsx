@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import AuthPage from "./AuthPage";
-import { AuthProvider, AuthContext } from "./AuthContext";
+import { AuthContext } from "./AuthContext";
 import "./Navbar.css";
 import ti from "../assets/Ti_Franck.png";
 import off from "../assets/Nav-NoLog.png";

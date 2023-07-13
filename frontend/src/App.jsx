@@ -8,6 +8,7 @@ import "./app.css";
 import "./App.css";
 import "./components/Navbar.css";
 import Filters from "./components/filter";
+import Footer from "./components/Footer";
 
 function App() {
   const [grottezer, setGrottezer] = useState([]);
@@ -57,14 +58,16 @@ function App() {
   };
 
   return (
-    <AuthProvider>
+    <><AuthProvider>
       <div className="App">
         <Navbar />
-
+        <div className="firstImgContainer">
+          <img className="firstImg"
+            src="src\assets\image grotte principal.png" alt="image grotte 1"></img>
+        </div>
         <Filters
           onFilterChange={handleFilterChange}
-          numberRes={filteredGrottezer.length}
-        />
+          numberRes={filteredGrottezer.length} />
 
         {filteredGrottezer.map((card) => (
           <Card
@@ -76,11 +79,15 @@ function App() {
             price={card.price}
             feu={card.feu}
             piscine={card.piscine}
-            capacity={card.max_capacity}
-          />
+            capacity={card.max_capacity} />
         ))}
       </div>
+      <div className="secondImgContainer">
+        <img className="secondImg"
+          src="src\assets\image grotte secondaire +footer.png" alt="image grotte 2"></img>
+      </div>
     </AuthProvider>
+    </>
   );
 }
 
