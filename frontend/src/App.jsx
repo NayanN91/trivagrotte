@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import Card from "./components/card";
 import axios from "axios";
 import "./app.css";
+import { Carousel } from "./components/Carousel";
+import { slides } from "./data/carouselData.json";
+
+
 
 function App() {
   const [grottezer, setGrottezer] = useState([]);
@@ -25,6 +29,7 @@ function App() {
       {grottezer.map((card) => (
         <Card key={card.id} id={card.id} name={card.name} img={card.img} />
       ))}
+      <Carousel data={slides} />
     </div>
   );
 }
