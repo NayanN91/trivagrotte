@@ -5,13 +5,17 @@ const Card = (props) => {
     props;
   return (
     <div className="cardGlobal">
-      <img src={img} alt="OUAILIMAGE" />
-      <div className="infos">
-        <ul>
-          <li>{name}</li>
-          <li>{region}</li>
-          <li>{price}</li>
-        </ul>
+      <div className="cards">
+        <div className="cardImage">
+          <img src={img} alt="OUAILIMAGE" />
+          <div className="infos">
+            <ul>
+              <li>{name}</li>
+              <li>{region}</li>
+              <li>{price}$</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
