@@ -3,7 +3,7 @@ import Card from "./components/card";
 import axios from "axios";
 import "./app.css";
 import Filters from "./components/filter";
-
+import Navbar from "./components/Navbar";
 function App() {
   const [grottezer, setGrottezer] = useState([]);
   const [filteredGrottezer, setFilteredGrottezer] = useState([]);
@@ -53,6 +53,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <Filters
         onFilterChange={handleFilterChange}
         numberRes={filteredGrottezer.length}
