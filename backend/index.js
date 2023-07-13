@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 // REGLAGE DU PORT
-const port = 4242;
+const port = 6969;
 
 app.use(cors());
 
@@ -15,7 +15,6 @@ const Grottezer = [
     piscine: "true",
     feu: "false",
     price: 400,
-    vue: "Mer",
     img: "https://images.unsplash.com/photo-1572587356426-b33bf42f999b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
   },
   {
@@ -26,7 +25,6 @@ const Grottezer = [
     piscine: "false",
     feu: "true",
     price: 150,
-    vue: "Cascade",
     img: "https://images.unsplash.com/photo-1562663859-6550c0c10f08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   },
   {
@@ -37,18 +35,16 @@ const Grottezer = [
     piscine: "true",
     feu: "false",
     price: 800,
-    vue: "Panoramique",
     img: "https://images-ext-1.discordapp.net/external/E3Cg4eu9GCMWv8r_08sk_BzZM5xoCTOLO4eoFGHT19g/%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D2070%26q%3D80/https/images.unsplash.com/photo-1550992402-9b1fc58fd76d?width=788&height=525",
   },
   {
     id: 4,
     name: "Maison Zinedine",
     max_capacity: "1-10",
-    region: "Canada",
+    region: "Sweden",
     piscine: "false",
     feu: "false",
-    price: 2500,
-    vue: "Neige",
+    price: 1000,
     img: "https://images-ext-2.discordapp.net/external/fy9SNeHFHM69Nni3CczCTvTN9OA3JtDmHxG-6V3YnE4/%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D2069%26q%3D80/https/images.unsplash.com/photo-1490143921278-d853145e4977?width=786&height=525",
   },
   {
@@ -84,7 +80,7 @@ const Grottezer = [
   {
     id: 8,
     name: "Villa Cristiana",
-    max_capacity: "1-20",
+    max_capacity: "1-10",
     region: "Portugal",
     piscine: "false",
     feu: "true",
@@ -99,7 +95,6 @@ const Grottezer = [
     piscine: "true",
     feu: "false",
     price: 400,
-    vue: "Mer",
     img: "https://images-ext-2.discordapp.net/external/i3s6m63b9itS82BTTaYuAcsxEjnuU092mayTOIbZie8/%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D1171%26q%3D80/https/images.unsplash.com/photo-1648744931812-7df0c5e9d355?width=788&height=525",
   },
   {
@@ -114,13 +109,12 @@ const Grottezer = [
   },
   {
     id: 11,
-    name: "Petite Grotte dans la Prairie",
+    name: "La grotte à bibi",
     max_capacity: "1-6",
     region: "France",
     piscine: "false",
     feu: "false",
     price: 150,
-    vue: "Montagne",
     img: "https://images-ext-2.discordapp.net/external/WYiFJ-CPQnffaKnhcwjM-53kkoMRbPz0LznaEW2jR_8/%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D2070%26q%3D80/https/images.unsplash.com/photo-1492156258338-493f3bd4d483?width=788&height=525",
   },
   {
@@ -130,8 +124,7 @@ const Grottezer = [
     region: "France",
     piscine: "false",
     feu: "true",
-    price: 500,
-    vue: "Cascade",
+    price: 400,
     img: "https://images-ext-2.discordapp.net/external/TgExQxn7Wkg0UtXXWHhmfLzAb74eEFjW4QYKtdiCfl0/https/cdn.pixabay.com/photo/2017/08/07/23/11/iceland-2608985_1280.jpg?width=840&height=525",
   },
   {
@@ -141,8 +134,7 @@ const Grottezer = [
     region: "Belgium",
     piscine: "true",
     feu: "false",
-    price: 100,
-    vue: "Foret",
+    price: 150,
     img: "https://images-ext-1.discordapp.net/external/tiHYlxR8YDnZA-HiQkUiDOaNxKSTmrm0b9lXns9N4do/%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D1172%26q%3D80/https/images.unsplash.com/photo-1681218865859-6caf8071028f?width=789&height=525",
   },
   {
@@ -151,16 +143,15 @@ const Grottezer = [
     max_capacity: "1-6",
     region: "Brazil",
     piscine: "false",
-    feu: "true",
-    price: 600,
-    vue: "Montagne",
+    feu: "tonpere",
+    price: 800,
     img: "https://images.unsplash.com/photo-1574700273608-7962d3602a9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
   },
   {
     id: 15,
     name: "Oui Oui Baguette",
     max_capacity: "1-10",
-    region: "Columbia",
+    region: "España",
     piscine: "true",
     feu: "false",
     price: 1000,
@@ -170,7 +161,7 @@ const Grottezer = [
     id: 16,
     name: "Persona non Grotta",
     max_capacity: "1-8",
-    region: "Norvege",
+    region: "Sweden",
     piscine: "false",
     feu: "false",
     price: 1000,
@@ -180,10 +171,10 @@ const Grottezer = [
     id: 17,
     name: "Don Diego de la Grotta",
     max_capacity: "1-6",
-    region: "Libye",
+    region: "Argentina",
     piscine: "true",
     feu: "true",
-    price: 600,
+    price: 800,
     img: "https://images.unsplash.com/photo-1563647334143-341ca36fdb20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   },
   {
@@ -193,7 +184,7 @@ const Grottezer = [
     region: "España",
     piscine: "true",
     feu: "true",
-    price: 200,
+    price: 150,
     img: "https://images.unsplash.com/photo-1495131839127-b735c9e20df0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
   },
   {
