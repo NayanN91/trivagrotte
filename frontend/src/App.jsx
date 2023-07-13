@@ -24,7 +24,8 @@ function App() {
   return (
     <><div className="ContextHomeContainer">
       <ContextHome />
-    </div><div className="App">
+    </div>
+    <div className="App">
         {grottezer.map((card) => (
           <Card
             key={card.id}
