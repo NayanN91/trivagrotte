@@ -8,7 +8,7 @@ import "./app.css";
 import "./App.css";
 import "./components/Navbar.css";
 import Filters from "./components/filter";
-import Navbar from "./components/Navbar";
+
 function App() {
   const [grottezer, setGrottezer] = useState([]);
   const [filteredGrottezer, setFilteredGrottezer] = useState([]);
@@ -60,7 +60,7 @@ function App() {
     <AuthProvider>
       <div className="App">
         <Navbar />
-        <Navbar />
+
         <Filters
           onFilterChange={handleFilterChange}
           numberRes={filteredGrottezer.length}
