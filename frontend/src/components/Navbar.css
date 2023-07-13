@@ -9,7 +9,7 @@
 }
 
 .Nav-Logo {
-  width: 13rem;
+  width: 5rem;
 }
 
 .Nav-Right {
@@ -41,4 +41,11 @@
 
 .Nav-NoLog {
   width: 3em;
+}
+
+.logoconnect {
+  width: 55px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
