@@ -56,18 +56,33 @@ function App() {
   };
 
   return (
-    
+  
     <><div>
       <Navbar />
-    </div>
-    <img className="grotteprincipal"
-    src="src\assets\image grotte principal.png" alt="image grotte"></img>
-      <Filters
+    </div><div className="App">
+
+        <Filters
           onFilterChange={handleFilterChange}
           numberRes={filteredGrottezer.length} />
-    <div className="ContextHomeContainer">
-      <ContextHome />
-    </div><div className="App">
+
+        {filteredGrottezer.map((card) => (
+          <Card
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            img={card.img}
+            region={card.region}
+            price={card.price}
+            feu={card.feu}
+            piscine={card.piscine}
+            capacity={card.max_capacity} />
+        ))}
+      </div><img className="grotteprincipal"
+        src="src\assets\image grotte principal.png" alt="image grotte"></img><Filters
+        onFilterChange={handleFilterChange}
+        numberRes={filteredGrottezer.length} /><div className="ContextHomeContainer">
+        <ContextHome />
+      </div><div className="App">
         {filteredGrottezer.map((card) => (
           <Card
             key={card.id}
@@ -90,13 +105,11 @@ function App() {
             region={card.region}
             price={card.price} />
         ))}
-      </div>
-      <img className="grottesecondaire"
-      src="\src\assets\image grotte secondaire.png" alt="image grotte secondaire" ></img>
-      <Footer />
-      </>
-      
-  );
+      </div><img className="grottesecondaire"
+        src="\src\assets\image grotte secondaire.png" alt="image grotte secondaire"></img><Footer /></>
+        
+        
+        );
 }
 
 export default App;
