@@ -76,7 +76,7 @@ export default function Filters({ onFilterChange, numberRes }) {
           value={selectedRegion}
           onChange={handleRegionChange}
         >
-          <option value="">Region</option>
+          <option value="">Location</option>
           {regionOptions.map((option) => (
             <option key={option} value={option}>
               {option}
