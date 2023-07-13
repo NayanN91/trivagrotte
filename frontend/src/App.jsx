@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { AuthProvider } from "./components/AuthContext";
 import Card from "./components/card";
 import axios from "axios";
-import "./app.css";
-import Filters from "./components/filter";
+
 import Navbar from "./components/Navbar";
+import "./app.css";
+import "./App.css";
+import "./components/Navbar.css";
+import Filters from "./components/filter";
+
 function App() {
   const [grottezer, setGrottezer] = useState([]);
   const [filteredGrottezer, setFilteredGrottezer] = useState([]);
@@ -52,27 +57,30 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Navbar />
-      <Filters
-        onFilterChange={handleFilterChange}
-        numberRes={filteredGrottezer.length}
-      />
+    <AuthProvider>
+      <div className="App">
+        <Navbar />
 
-      {filteredGrottezer.map((card) => (
-        <Card
-          key={card.id}
-          id={card.id}
-          name={card.name}
-          img={card.img}
-          region={card.region}
-          price={card.price}
-          feu={card.feu}
-          piscine={card.piscine}
-          capacity={card.max_capacity}
+        <Filters
+          onFilterChange={handleFilterChange}
+          numberRes={filteredGrottezer.length}
         />
-      ))}
-    </div>
+
+        {filteredGrottezer.map((card) => (
+          <Card
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            img={card.img}
+            region={card.region}
+            price={card.price}
+            feu={card.feu}
+            piscine={card.piscine}
+            capacity={card.max_capacity}
+          />
+        ))}
+      </div>
+    </AuthProvider>
   );
 }
 
