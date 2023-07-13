@@ -2,27 +2,63 @@ import React, { useState, useEffect } from "react";
 import Card from "./components/card";
 import axios from "axios";
 import "./app.css";
+import Filters from "./components/filter";
 
 function App() {
   const [grottezer, setGrottezer] = useState([]);
+  const [filteredGrottezer, setFilteredGrottezer] = useState([]);
 
   useEffect(() => {
-    const getGrottezer = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4242/Grottezer");
-        const grotteData = response.data;
-        setGrottezer(grotteData);
+        const response = await axios.get("http://localhost:6969/Grottezer");
+        const data = response.data;
+        setGrottezer(data);
+        setFilteredGrottezer(data);
       } catch (error) {
-        console.log("Error fetching Grottezer data:", error);
+        console.error("Error fetching data from API:", error);
       }
     };
 
-    getGrottezer();
+    fetchData();
   }, []);
+
+  const handleFilterChange = (
+    selectedCapacity,
+    selectedLocation,
+    selectedPrice
+  ) => {
+    let filteredData = grottezer;
+
+    if (selectedCapacity !== "") {
+      filteredData = filteredData.filter(
+        (item) => item.max_capacity === selectedCapacity
+      );
+    }
+
+    if (selectedLocation !== "") {
+      filteredData = filteredData.filter(
+        (item) => item.region === selectedLocation
+      );
+    }
+
+    if (selectedPrice !== "") {
+      filteredData = filteredData.filter(
+        (item) => item.price === selectedPrice
+      );
+    }
+
+    setFilteredGrottezer(filteredData);
+  };
 
   return (
     <div className="App">
-      {grottezer.map((card) => (
+      <Filters
+        onFilterChange={handleFilterChange}
+        numberRes={filteredGrottezer.length}
+      />
+
+      {filteredGrottezer.map((card) => (
         <Card
           key={card.id}
           id={card.id}
@@ -30,6 +66,9 @@ function App() {
           img={card.img}
           region={card.region}
           price={card.price}
+          feu={card.feu}
+          piscine={card.piscine}
+          capacity={card.max_capacity}
         />
       ))}
     </div>
