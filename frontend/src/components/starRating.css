@@ -1,54 +1,57 @@
 .Rating-App {
-    display: flex;
-    justify-content: center;
-    margin: 2em;
-    font-family: sans-serif;
-    text-align: center;
-    color : white
+  display: flex;
+  justify-content: center;
+  margin-left: 340px;
+  margin-top: -680px;
+  font-family: sans-serif;
+  text-align: center;
+  color: white;
+  position: absolute;
 }
 
-
 .Rating-content {
-    background: webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); background-color: rgba(182, 182, 182, 0.2);
-    backdrop-filter: blur(15px);
-    background-color: rgba(182, 182, 182, 0.2);
-    padding: 80px 20px;
-    border-radius: 10px;
-    width: 74rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  /* background: webkit-backdrop-filter: blur(15px);  */
+  backdrop-filter: blur(15px);
+  background-color: rgba(182, 182, 182, 0.2);
+  backdrop-filter: blur(15px);
+  background-color: rgba(182, 182, 182, 0.2);
+  padding: 80px 20px;
+  border-radius: 10px;
+  width: 74rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .Rating-product {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .Rating-product h1 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 textarea {
-    width: 100%;
-    border-radius: 6px;
-    padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px;
 }
 
 button {
-    background: blue;
-    color: #fff;
-    margin-top: 10px;
-    width: 100%;
-    border-radius: 6px;
-    padding: 10px 0;
-    border: none;
-    font-weight: bolder;
-    cursor: pointer;
+  background: blue;
+  color: #fff;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 10px 0;
+  border: none;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 button.disabled {
-    opacity: 0.5;
-    pointer-events: none;
+  opacity: 0.5;
+  pointer-events: none;
 }

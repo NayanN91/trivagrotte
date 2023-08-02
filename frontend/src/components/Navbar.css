@@ -5,11 +5,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 0rem 2rem;
-  background-color: #170F07;
-}
-
-.Nav-Logo {
-  width: 5rem;
+  background-color: #170f07;
 }
 
 .Nav-Right {
@@ -44,8 +40,13 @@
 }
 
 .logoconnect {
+  margin-right: -320px;
   width: 55px;
   border-radius: 50%;
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+
+/* .statusDot {
+  margin-right: 5px;
+} */

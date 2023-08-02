@@ -1,18 +1,19 @@
-.Contextcontainer{
-    background-color: #170F07;
-    color: white;
-    display: flex;
-    justify-content: center;
-    font-style: italic;
-    font-size: 1.2rem;
-    padding-top: 50px;
+.Contextcontainer {
+  background-color: #170f07;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  padding-top: 50px;
 }
-.LocationContainer{
-    background-color: #170F07;
-    color: #CBA35E;
-    display: flex;
-    justify-content: center;
-    font-style: xx-large;
-    padding-top: 80px;
-    font-size: 3rem;
+
+.LocationContainer {
+  background-color: #170f07;
+  color: #cba35e;
+  display: flex;
+  justify-content: center;
+  font-style: xx-large;
+  padding-top: 80px;
+  font-size: 3rem;
 }

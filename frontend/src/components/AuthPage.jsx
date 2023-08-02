@@ -9,7 +9,7 @@ const AuthPage = () => {
   const [username, setUsername] = useState("");
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const correctusername = "djokzer";
+  const correctusername = "caveman";
   const correctpassword = "64zer";
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -53,31 +53,36 @@ const AuthPage = () => {
             onSubmit={handleLoginClickzer}
           >
             <div className="username">
-              <label htmlFor="username">Username: </label>
+              <label htmlFor="username"></label>
               <input
+                className="inputUsername"
                 type="text"
                 name="username"
                 id="username"
                 required
+                placeholder="Username"
                 onChange={(event) => setUsername(event.target.value)}
                 onKeyDown={handleKeyDown}
               />
             </div>
             <div className="password">
-              <label htmlFor="password">Password: </label>
+              <label htmlFor="password"></label>
               <input
+                className="inputPassword"
                 type="password"
                 name="password"
                 id="password"
                 required
+                placeholder="Password"
                 onChange={(event) => setPassword(event.target.value)}
                 onKeyDown={handleKeyDown}
               />
             </div>
             <div className="form-example">
               <input
+                className="inputLogin"
                 type="submit"
-                value="log in"
+                value="Submit"
                 onChange={(event) => setUsername(event.target.value)}
                 onKeyDown={handleKeyDown}
                 {...(event) => setPassword(event.target.value)}

@@ -1,14 +1,12 @@
-import "../components/ContextHome.css"
+import "../components/ContextHome.css";
 
-export default function ContextHome () {
-return (
+export default function ContextHome() {
+  return (
     <>
-    <div className="Contextcontainer">
-    " TrivaGrotte, ne choississez rien d'autre"
-    </div>
-    <div className="LocationContainer" >
-    LOCATION
-    </div>
+      <div className="Contextcontainer">
+        <h1>"Uncover Adventure, Choose Trivagrotte!"</h1>
+      </div>
+      <div className="LocationContainer">RENTALS</div>
     </>
-)
+  );
 }

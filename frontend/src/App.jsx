@@ -8,7 +8,9 @@ import "./app.css";
 import "./App.css";
 import "./components/Navbar.css";
 import Filters from "./components/filter";
+import StarRating from "./components/starRating";
 import Footer from "./components/Footer";
+import ContextHome from "./components/ContextHome";
 
 function App() {
   const [grottezer, setGrottezer] = useState([]);
@@ -58,35 +60,47 @@ function App() {
   };
 
   return (
-    <><AuthProvider>
-      <div className="App">
-        <Navbar />
-        <div className="firstImgContainer">
-          <img className="firstImg"
-            src="src\assets\image grotte principal.png" alt="image grotte 1"></img>
+    <>
+      <AuthProvider>
+        <div className="App">
+          <Navbar />
+          <div className="firstImgContainer">
+            <img
+              className="firstImg"
+              src="src\assets\image grotte principal.png"
+              alt="image grotte 1"
+            ></img>
+          </div>
+          <Filters
+            onFilterChange={handleFilterChange}
+            numberRes={filteredGrottezer.length}
+          />
+          <ContextHome />
+          <div className="cardApp">
+            {filteredGrottezer.map((card) => (
+              <Card
+                key={card.id}
+                id={card.id}
+                name={card.name}
+                img={card.img}
+                region={card.region}
+                price={card.price}
+                feu={card.feu}
+                piscine={card.piscine}
+                capacity={card.max_capacity}
+              />
+            ))}{" "}
+          </div>
         </div>
-        <Filters
-          onFilterChange={handleFilterChange}
-          numberRes={filteredGrottezer.length} />
-
-        {filteredGrottezer.map((card) => (
-          <Card
-            key={card.id}
-            id={card.id}
-            name={card.name}
-            img={card.img}
-            region={card.region}
-            price={card.price}
-            feu={card.feu}
-            piscine={card.piscine}
-            capacity={card.max_capacity} />
-        ))}
-      </div>
-      <div className="secondImgContainer">
-        <img className="secondImg"
-          src="src\assets\image grotte secondaire +footer.png" alt="image grotte 2"></img>
-      </div>
-    </AuthProvider>
+        <div className="secondImgContainer">
+          <img
+            className="secondImg"
+            src="src\assets\image grotte secondaire +footer.png"
+            alt="image grotte 2"
+          ></img>
+        </div>
+      </AuthProvider>
+      <StarRating />
     </>
   );
 }
